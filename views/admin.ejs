@@ -47,7 +47,9 @@
                 wikiUrl:$('#wikiUrl').val()
             };
             $.ajax({url:'/admin/addEvent',type:'post',data:data,success:function(result){
-                console.log(result);
+                if(result.code != 0) return alert('失败');
+                alert('成功');
+                location.reload();
             }})
         });
 
