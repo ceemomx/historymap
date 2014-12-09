@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        html { height: 100% }
+        body { height: 100%; margin: 0; padding: 0 }
+        .main{padding:15px;}
+        .main div{padding:5px;margin:5px;}
+        .main div input{padding:5px;width:200px;height:20px;line-height:20px;}
+        .main div textarea{padding:5px;width:300px;height:250px;line-height: 20px;resize: none;}
+    </style>
+    <script src="./javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="main">
+    <div><input type="text" placeholder="title" id="title"></div>
+    <div><input type="text" placeholder="imgurl" id="img"></div>
+    <div><textarea placeholder="content" id="content"></textarea></div>
+    <div>
+        <select id="type">
+            <option value="war">war</option>
+            <option value="movement">movement</option>
+            <option value="event">event</option>
+        </select>
+    </div>
+    <div><input type="text" placeholder="lat" id="lat"></div>
+    <div><input type="text" placeholder="lng" id="lng"></div>
+    <div><input type="text" placeholder="date" id="date"></div>
+    <div><input type="text" placeholder="baikeUrl" id="baikeUrl"></div>
+    <div><input type="text" placeholder="wikiUrl" id="wikiUrl"></div>
+    <div><button id="submit" >submit</button></div>
+</div>
+</body>
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var data = {
+                title:$('#title').val(),
+                imgUrl:$('#img').val(),
+                content:$('#content').val(),
+                type:$('#type').val(),
+                lat:$('#lat').val(),
+                lng:$('#lng').val(),
+                date:$('#date').val(),
+                baikeUrl:$('#baikeUrl').val(),
+                wikiUrl:$('#wikiUrl').val()
+            };
+            $.ajax({url:'/admin/addEvent',type:'post',data:data,success:function(result){
+                console.log(result);
+            }})
+        });
+
+
+    })
+</script>
+</html>
+
+<!--db.stat.insert({ "_id" : "view:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209", "count" : 53 })-->
+<!--db.stat.insert({ "_id" : "send:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209", "count" : 28 })-->
+<!--db.stat.insert({ "_id" : "exchange:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209", "count" : 20 })-->
+
+<!--db.stat.insert({ "_id" : "view:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209", "count" : 54 })-->
+<!--db.stat.insert({ "_id" : "send:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209", "count" : 30 })-->
+<!--db.stat.insert({ "_id" : "exchange:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209", "count" : 24 })-->
+
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209"},{$set:{"count":53}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209"},{$set:{"count":28}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141209"},{$set:{"count":20}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209"},{$set:{"count":54}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209"},{$set:{"count":30}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141209"},{$set:{"count":24}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141205"},{$set:{"count":71}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141205"},{$set:{"count":48}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141205"},{$set:{"count":36}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141205"},{$set:{"count":69}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141205"},{$set:{"count":44}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141205"},{$set:{"count":35}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141204"},{$set:{"count":69}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141204"},{$set:{"count":38}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141204"},{$set:{"count":33}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141204"},{$set:{"count":67}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141204"},{$set:{"count":42}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141204"},{$set:{"count":33}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141203"},{$set:{"count":72}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141203"},{$set:{"count":47}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:24fe9198bc392410db0dc454a2f4fa09:20141203"},{$set:{"count":37}})-->
+
+<!--db.stat.update({"_id" : "view:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141203"},{$set:{"count":71}})-->
+<!--db.stat.update({"_id" : "send:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141203"},{$set:{"count":42}})-->
+<!--db.stat.update({"_id" : "exchange:5485cb93f9ff833f78b3c76a:9780ea8112eb19b8add62cb130a50775:20141203"},{$set:{"count":35}})-->
+
+<!--db.pv.insert({ "_id" : "shop:2014120903", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 107 })-->
+<!--db.pv.insert({ "_id" : "shop:2014120503", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 162 })-->
+<!--db.pv.insert({ "_id" : "shop:2014120403", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 146 })-->
+<!--db.pv.insert({ "_id" : "shop:2014120303", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 149 })-->
+
+
+<!--db.pv.insert({ "_id" : "promotion:2014120905", "promotionID" : "24fe9198bc392410db0dc454a2f4fa09", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 53 })-->
+<!--db.pv.insert({ "_id" : "promotion:2014120908", "promotionID" : "9780ea8112eb19b8add62cb130a50775", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 54 })-->
+
+<!--db.pv.insert({ "_id" : "promotion:2014120504", "promotionID" : "24fe9198bc392410db0dc454a2f4fa09", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 71 })-->
+<!--db.pv.insert({ "_id" : "promotion:2014120503", "promotionID" : "9780ea8112eb19b8add62cb130a50775", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 69 })-->
+
+<!--db.pv.insert({ "_id" : "promotion:2014120404", "promotionID" : "24fe9198bc392410db0dc454a2f4fa09", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 69 })-->
+<!--db.pv.insert({ "_id" : "promotion:2014120403", "promotionID" : "9780ea8112eb19b8add62cb130a50775", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 67 })-->
+
+<!--db.pv.insert({ "_id" : "promotion:2014120304", "promotionID" : "24fe9198bc392410db0dc454a2f4fa09", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 72 })-->
+<!--db.pv.insert({ "_id" : "promotion:2014120303", "promotionID" : "9780ea8112eb19b8add62cb130a50775", "shopID" : "5485cb93f9ff833f78b3c76a", "count" : 71 })-->
+        <!--db.pv.find({_id:'promotion:20141})-->
+
+<!--promotionID: 24fe9198bc392410db0dc454a2f4fa09;-->
+<!--promotionID: 9780ea8112eb19b8add62cb130a50775;-->
+<!--shopID: 5485cb93f9ff833f78b3c76a;-->
+
